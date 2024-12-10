@@ -1,0 +1,51 @@
+
+
+
+CREATE DATABASE DB_ASSIG1
+ON PRIMARY
+(
+    NAME = 'DB_ASSIG1',
+    FILENAME = 'C:\Data\DB_ASSIG1.mdf',
+    SIZE = 1024MB,
+    MAXSIZE = UNLIMITED,
+    FILEGROWTH = 100MB
+),
+FILEGROUP FG_ASSIG1
+(
+    NAME = 'DB_ASSEC2',
+    FILENAME = 'C:\Data\DB_ASSEC2.ndf',
+    SIZE = 500MB,
+    MAXSIZE = UNLIMITED,
+    FILEGROWTH = 50MB
+)
+LOG ON
+(
+    NAME = 'DB_log1',
+    FILENAME = 'C:\Data\DB_log1.ldf',
+    SIZE = 512MB,
+    MAXSIZE = 2048GB,
+    FILEGROWTH = 10%
+);
+
+3. Use the newly created database:
+
+USE DB_ASSIG1;
+
+
+
+CREATE TABLE Phones
+(
+    Phone_ID SMALLINT,
+    Phone_Name VARCHAR(15),
+    Phone_Type VARCHAR(10),
+    Description VARCHAR(25),
+    Price SMALLMONEY,
+    Manufacturer_ID INT
+);
+
+
+
+ALTER TABLE Phones
+ADD Design_ID INT NOT NULL;
+
+
